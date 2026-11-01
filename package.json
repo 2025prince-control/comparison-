@@ -1,0 +1,27 @@
+{
+  "name": "ai-model-benchmark-suite",
+  "version": "1.0.0",
+  "description": "Google Gemini Comparison & Benchmarking Suite",
+  "main": "server/index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server/index.js",
+    "dev": "node --watch server/index.js",
+    "test": "node --test server/tests/*.test.js"
+  },
+  "dependencies": {
+    "@google/genai": "^2.32.0",
+    "@google/generative-ai": "^0.24.0",
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2"
+  },
+  "keywords": [
+    "ai",
+    "gemini",
+    "benchmark",
+    "comparison"
+  ],
+  "author": "",
+  "license": "MIT"
+}

@@ -1,0 +1,21 @@
+# Environment secrets
+.env
+.env.local
+.env.*.local
+
+# Node dependencies
+node_modules/
+package-lock.json
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Runtime data & benchmark storage
+server/data/history.json
+
+# Operating System files
+.DS_Store
+Thumbs.db
+
