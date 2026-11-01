@@ -19,3 +19,7 @@ server/data/history.json
 .DS_Store
 Thumbs.db
 
+# Presentation & private workflow files
+PRESENTATION_WORKFLOW.md
+
+
