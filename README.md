@@ -1,5 +1,8 @@
 # AI Model Selection & Benchmarking Suite
 
+🌐 **Live Web Application**: [https://comparison-rust.vercel.app/](https://comparison-rust.vercel.app/)  
+📂 **GitHub Repository**: [https://github.com/2025prince-control/comparison-](https://github.com/2025prince-control/comparison-)
+
 An end-to-end, full-stack benchmarking and evaluation platform that compares distinct Artificial Intelligence model architectures and hyperparameter configurations head-to-head on identical prompts.
 
 Built with a **Node.js/Express** backend and an **ultra-clean White Theme** web interface, powered exclusively by a single **Google Gemini API key**.
@@ -150,26 +153,11 @@ If presenting in a classroom or auditorium with poor network connectivity, toggl
 
 ---
 
-## 🚀 Deployment (Vercel & Git)
+## 🚀 Live Deployment & Cloud Hosting
 
-### 1. Initialize Git & Push to GitHub
-```bash
-git init
-git add .
-git commit -m "Initial commit: Gemini AI Benchmark Suite"
-git branch -M main
-git remote add origin https://github.com/<your-username>/<your-repo-name>.git
-git push -u origin main
-```
-
-### 2. Deploy on Vercel
-1. Go to [vercel.com](https://vercel.com) and log in with your GitHub account.
-2. Click **"Add New"** → **"Project"**.
-3. Import your GitHub repository.
-4. Under **Environment Variables**, add:
-   * **Key**: `GEMINI_API_KEY`
-   * **Value**: *(Your Google Gemini API Key)*
-5. Click **"Deploy"**. Vercel will build and deploy your project live with an instant `.vercel.app` URL!
+* **Production URL**: [https://comparison-rust.vercel.app/](https://comparison-rust.vercel.app/)
+* **Platform**: Vercel Serverless Platform
+* **Repository**: [https://github.com/2025prince-control/comparison-](https://github.com/2025prince-control/comparison-)
 
 ---
 
