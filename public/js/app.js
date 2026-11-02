@@ -59,8 +59,8 @@ function resetAllFactorsToZero() {
       const valEl = document.getElementById(`card-${slot}-${key}-val`);
       if (valEl) valEl.textContent = '0%';
 
-      const slider = document.querySelector(`.score-slider[data-slot="${slot.toUpperCase()}"][data-metric="${m}"]`);
-      if (slider) slider.value = 0;
+      const bar = document.getElementById(`card-${slot}-${key}-bar`);
+      if (bar) bar.style.width = '0%';
     });
   });
 }
@@ -106,21 +106,6 @@ function setupEventListeners() {
   elements.closeHistoryBtn.addEventListener('click', closeHistory);
   elements.historyBackdrop.addEventListener('click', closeHistory);
   elements.clearHistoryBtn.addEventListener('click', handleClearHistory);
-
-  // Score slider events (live percentage recalculation)
-  document.querySelectorAll('.score-slider').forEach(slider => {
-    slider.addEventListener('input', (e) => {
-      const slot = e.target.dataset.slot.toLowerCase();
-      const metric = e.target.dataset.metric;
-      const val = parseInt(e.target.value, 10);
-
-      const key = METRIC_KEY_MAP[metric] || metric;
-      const label = document.getElementById(`card-${slot}-${key}-val`);
-      if (label) label.textContent = `${val}%`;
-
-      recalculateSlotOverallScore(slot);
-    });
-  });
 }
 
 function setDemoMode(isDemo) {
@@ -248,10 +233,10 @@ function renderBenchmarkResults(data) {
       if (rankBadge && res.rank) {
         rankBadge.classList.remove('hidden');
         if (res.rank === 1) {
-          rankBadge.textContent = '🥇 #1 Winner';
+          rankBadge.textContent = '#1 Winner';
           rankBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-amber-400 text-slate-950 shadow-xs';
         } else {
-          rankBadge.textContent = '🥈 #2 Place';
+          rankBadge.textContent = '#2 Place';
           rankBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-slate-200 text-slate-700';
         }
       }
@@ -313,12 +298,12 @@ function renderBenchmarkResults(data) {
 
 function setPercentageFactor(slot, metric, value) {
   const rounded = Math.round(Number(value) || 0);
-  const slider = document.querySelector(`.score-slider[data-slot="${slot.toUpperCase()}"][data-metric="${metric}"]`);
-  if (slider) slider.value = rounded;
-
   const key = METRIC_KEY_MAP[metric] || metric;
   const label = document.getElementById(`card-${slot}-${key}-val`);
   if (label) label.textContent = `${rounded}%`;
+
+  const bar = document.getElementById(`card-${slot}-${key}-bar`);
+  if (bar) bar.style.width = `${Math.min(100, Math.max(0, rounded))}%`;
 }
 
 // Live Recalculate Overall Score when user moves slider
@@ -376,11 +361,11 @@ function recomputeRanksAndWinner() {
 
     if (rankBadge) {
       if (r.rank === 1) {
-        rankBadge.textContent = '🥇 #1 Winner';
+        rankBadge.textContent = '#1 Winner';
         rankBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-amber-400 text-slate-950 shadow-xs';
         rankBadge.classList.remove('hidden');
       } else {
-        rankBadge.textContent = '🥈 #2 Place';
+        rankBadge.textContent = '#2 Place';
         rankBadge.className = 'px-2 py-0.5 rounded text-[10px] font-bold bg-slate-200 text-slate-700';
         rankBadge.classList.remove('hidden');
       }
@@ -411,7 +396,7 @@ function renderHistoryList(items) {
     const dateStr = new Date(item.timestamp).toLocaleTimeString();
     const promptSnippet = item.prompt.length > 55 ? `${item.prompt.slice(0, 55)}...` : item.prompt;
     const winnerBadge = item.winner
-      ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-200">🏆 Winner (${item.winner.score}%)</span>`
+      ? `<span class="px-1.5 py-0.5 rounded text-[10px] font-bold bg-amber-100 text-amber-800 border border-amber-200">Winner (${item.winner.score}%)</span>`
       : `<span class="text-[10px] text-slate-400">Incomplete</span>`;
 
     return `

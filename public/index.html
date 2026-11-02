@@ -206,7 +206,7 @@
           </div>
         </div>
 
-        <!-- Factor Scores & Sliders (0% - 100%) -->
+        <!-- Factor Scores (0% - 100%) -->
         <div class="p-4 border-t border-slate-100 bg-slate-50/60 space-y-3">
           
           <div class="flex items-center justify-between">
@@ -214,38 +214,46 @@
             <span id="card-a-overall-score" class="text-sm font-extrabold font-mono text-indigo-600">0%</span>
           </div>
 
-          <!-- Factor Sliders -->
-          <div class="space-y-2 text-[11px]">
+          <!-- Factor Progress Bars -->
+          <div class="space-y-2.5 text-[11px]">
             <div>
-              <div class="flex justify-between mb-0.5">
-                <span class="text-slate-600 font-medium">🎯 Accuracy (35%):</span>
+              <div class="flex justify-between mb-1">
+                <span class="text-slate-600 font-medium">Accuracy (35%):</span>
                 <span id="card-a-acc-val" class="font-mono font-bold text-slate-900">0%</span>
               </div>
-              <input type="range" class="w-full score-slider" data-slot="A" data-metric="accuracy" min="0" max="100" step="1" value="0">
+              <div class="w-full bg-slate-200/80 rounded-full h-1.5 overflow-hidden">
+                <div id="card-a-acc-bar" class="bg-indigo-600 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+              </div>
             </div>
 
             <div>
-              <div class="flex justify-between mb-0.5">
-                <span class="text-slate-600 font-medium">📌 Relevance (25%):</span>
+              <div class="flex justify-between mb-1">
+                <span class="text-slate-600 font-medium">Relevance (25%):</span>
                 <span id="card-a-rel-val" class="font-mono font-bold text-slate-900">0%</span>
               </div>
-              <input type="range" class="w-full score-slider" data-slot="A" data-metric="relevance" min="0" max="100" step="1" value="0">
+              <div class="w-full bg-slate-200/80 rounded-full h-1.5 overflow-hidden">
+                <div id="card-a-rel-bar" class="bg-indigo-600 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+              </div>
             </div>
 
             <div>
-              <div class="flex justify-between mb-0.5">
-                <span class="text-slate-600 font-medium">📦 Completeness (20%):</span>
+              <div class="flex justify-between mb-1">
+                <span class="text-slate-600 font-medium">Completeness (20%):</span>
                 <span id="card-a-comp-val" class="font-mono font-bold text-slate-900">0%</span>
               </div>
-              <input type="range" class="w-full score-slider" data-slot="A" data-metric="completeness" min="0" max="100" step="1" value="0">
+              <div class="w-full bg-slate-200/80 rounded-full h-1.5 overflow-hidden">
+                <div id="card-a-comp-bar" class="bg-indigo-600 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+              </div>
             </div>
 
             <div>
-              <div class="flex justify-between mb-0.5">
-                <span class="text-slate-600 font-medium">✨ Clarity (20%):</span>
+              <div class="flex justify-between mb-1">
+                <span class="text-slate-600 font-medium">Clarity (20%):</span>
                 <span id="card-a-clar-val" class="font-mono font-bold text-slate-900">0%</span>
               </div>
-              <input type="range" class="w-full score-slider" data-slot="A" data-metric="clarity" min="0" max="100" step="1" value="0">
+              <div class="w-full bg-slate-200/80 rounded-full h-1.5 overflow-hidden">
+                <div id="card-a-clar-bar" class="bg-indigo-600 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+              </div>
             </div>
           </div>
 
@@ -305,7 +313,7 @@
           </div>
         </div>
 
-        <!-- Factor Scores & Sliders (0% - 100%) -->
+        <!-- Factor Scores (0% - 100%) -->
         <div class="p-4 border-t border-slate-100 bg-slate-50/60 space-y-3">
           
           <div class="flex items-center justify-between">
@@ -313,38 +321,46 @@
             <span id="card-b-overall-score" class="text-sm font-extrabold font-mono text-amber-600">0%</span>
           </div>
 
-          <!-- Factor Sliders -->
-          <div class="space-y-2 text-[11px]">
+          <!-- Factor Progress Bars -->
+          <div class="space-y-2.5 text-[11px]">
             <div>
-              <div class="flex justify-between mb-0.5">
-                <span class="text-slate-600 font-medium">🎯 Accuracy (35%):</span>
+              <div class="flex justify-between mb-1">
+                <span class="text-slate-600 font-medium">Accuracy (35%):</span>
                 <span id="card-b-acc-val" class="font-mono font-bold text-slate-900">0%</span>
               </div>
-              <input type="range" class="w-full score-slider" data-slot="B" data-metric="accuracy" min="0" max="100" step="1" value="0">
+              <div class="w-full bg-slate-200/80 rounded-full h-1.5 overflow-hidden">
+                <div id="card-b-acc-bar" class="bg-amber-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+              </div>
             </div>
 
             <div>
-              <div class="flex justify-between mb-0.5">
-                <span class="text-slate-600 font-medium">📌 Relevance (25%):</span>
+              <div class="flex justify-between mb-1">
+                <span class="text-slate-600 font-medium">Relevance (25%):</span>
                 <span id="card-b-rel-val" class="font-mono font-bold text-slate-900">0%</span>
               </div>
-              <input type="range" class="w-full score-slider" data-slot="B" data-metric="relevance" min="0" max="100" step="1" value="0">
+              <div class="w-full bg-slate-200/80 rounded-full h-1.5 overflow-hidden">
+                <div id="card-b-rel-bar" class="bg-amber-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+              </div>
             </div>
 
             <div>
-              <div class="flex justify-between mb-0.5">
-                <span class="text-slate-600 font-medium">📦 Completeness (20%):</span>
+              <div class="flex justify-between mb-1">
+                <span class="text-slate-600 font-medium">Completeness (20%):</span>
                 <span id="card-b-comp-val" class="font-mono font-bold text-slate-900">0%</span>
               </div>
-              <input type="range" class="w-full score-slider" data-slot="B" data-metric="completeness" min="0" max="100" step="1" value="0">
+              <div class="w-full bg-slate-200/80 rounded-full h-1.5 overflow-hidden">
+                <div id="card-b-comp-bar" class="bg-amber-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+              </div>
             </div>
 
             <div>
-              <div class="flex justify-between mb-0.5">
-                <span class="text-slate-600 font-medium">✨ Clarity (20%):</span>
+              <div class="flex justify-between mb-1">
+                <span class="text-slate-600 font-medium">Clarity (20%):</span>
                 <span id="card-b-clar-val" class="font-mono font-bold text-slate-900">0%</span>
               </div>
-              <input type="range" class="w-full score-slider" data-slot="B" data-metric="clarity" min="0" max="100" step="1" value="0">
+              <div class="w-full bg-slate-200/80 rounded-full h-1.5 overflow-hidden">
+                <div id="card-b-clar-bar" class="bg-amber-500 h-full rounded-full transition-all duration-300" style="width: 0%"></div>
+              </div>
             </div>
           </div>
 
