@@ -21,6 +21,7 @@ Thumbs.db
 
 # Presentation & private workflow files
 PRESENTATION_WORKFLOW.md
+PROJECT_DOCUMENTATION.md
 Project_Documentation.docx
 scripts/generateDocx.js
 
